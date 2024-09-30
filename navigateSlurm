@@ -1,0 +1,5 @@
+# Run the job
+sbatch SLURM/gpu_job.sh
+
+# to check the job status by a user name
+squeue -u <USERNAME>
