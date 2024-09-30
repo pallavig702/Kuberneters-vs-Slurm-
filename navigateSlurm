@@ -1,3 +1,6 @@
+#Create a job.sh file
+Please see SLURM/gpu_job.sh
+
 # Run the job
 sbatch SLURM/gpu_job.sh
 
