@@ -8,3 +8,6 @@ Disclaimer: While Kubernetes and Slurm have fundamentally different job submissi
 | Tasks |   Slurm   |  Kubernetes  |
 | :---:   | :---: | :---: |
 | Seconds | 301   | 283   |
+
+Convert it into table here
+https://docs.google.com/spreadsheets/d/1qMnKAA5yYIJGemuwOGr8rjKKR-OGtrx08P2S95erjek/edit?gid=0#gid=0
