@@ -6,11 +6,13 @@ Disclaimer: While Kubernetes and Slurm have fundamentally different job submissi
 
 |  | Slurm Tutorial | Kubernetes Tutorial |
 | :---:   | :---: | :---: |
-| Scripts | uses shell script to make batch file to run job(s)| uses YAML files to run a job(s)|
-| Dyanamic in nature | Slurm consists of a slurmd daemon running on each compute node and a central slurmctld daemon running on a management node | Here, slurmctld equivalent is master node and slurm equivalent is worker/compute node |
-| :---:   | :---: | :---: |
-| Tasks |   Slurm   |  Kubernetes  |
-| :---:   | :---: | :---: |
+| **Scripts** | uses shell script to make batch file to run job(s)| uses YAML files to run a job(s)|
+| **Dyanamic in nature?** | Slurm consists of a slurmd daemon running on each compute node and a central slurmctld daemon running on a management node | Here, slurmctld equivalent is master node and slurm equivalent is worker/compute node |
+| **Autoscaling?**	   | Slurm lacks auto-scaling and is designed for a fixed scale. | Autoscaling is a key feature of Kubernetes. K8s primarily designed for a public cloud environment where additional compute power is always available. If you want to launch a workload that exceeds the current capacity of the cluster, the deployment just fails or scales the cluster to meet the required resources. |
+|**Jobs Status**  |   |     |
+| Check active, failed, completed etc. | sacct -u <username> | kubectl get pods, kubectl get jobs, <br>kubectl describe pod <podname> |
+|Report the running jobs in priority order and then the pending jobs in priority order| squeue -u <username> | kubectl get pods, kubectl get jobs, <br>kubectl describe pod <podname> |
+| **Submit a job to run **  | :---: | :---: |
 | Seconds | 301   | 283   |
 
 Convert it into table here
