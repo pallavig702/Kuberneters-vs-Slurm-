@@ -3,7 +3,7 @@
 #SBATCH --output=output_%j.txt
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --mem=16G 
 #SBATCH --time=06:00:00
 #SBATCH --partition=i.q # Get the name of the gpu_partition by the command "scontrol show partition"
 #SBATCH --gres=gpu:1              # Request 1 GPU
