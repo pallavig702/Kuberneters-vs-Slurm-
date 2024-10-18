@@ -4,7 +4,11 @@ A technical comparison of Kubernetes and Slurm command usage for analogous funct
 
 Disclaimer: While Kubernetes and Slurm have fundamentally different job submission mechanisms, this comparative analysis aims to illustrate how proficiency in one platform can facilitate understanding of the other.
 
-
+|  | Slurm Tutorial | Kubernetes Tutorial |
+| :---:   | :---: | :---: |
+| Scripts | uses shell script to make batch file to run job(s)| uses YAML files to run a job(s)|
+| Dyanamic in nature | Slurm consists of a slurmd daemon running on each compute node and a central slurmctld daemon running on a management node | Here, slurmctld equivalent is master node and slurm equivalent is worker/compute node |
+| :---:   | :---: | :---: |
 | Tasks |   Slurm   |  Kubernetes  |
 | :---:   | :---: | :---: |
 | Seconds | 301   | 283   |
