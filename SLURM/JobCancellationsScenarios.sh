@@ -1,18 +1,10 @@
-1. Cancel a specific job: To cancel a single job, use the job ID that was provided when the job was submitted.
-<br>
-**bash: scancel 12345** <br>
-This command will cancel the job with ID 12345.
+#1. Cancel a specific job: To cancel a single job, use the job ID that was provided when the job was submitted. This command will cancel the job with ID 12345.
+scancel 12345
 
-2. Cancel all jobs of a user
-To cancel all jobs submitted by a specific user (for example, username), you can use the -u option:
-
-bash
-Copy code
+#2. Cancel all jobs of a user: To cancel all jobs submitted by a specific user (for example, username), you can use the -u option. This will cancel all jobs currently submitted by the user username.
 scancel -u username
-This will cancel all jobs currently submitted by the user username.
 
-3. Cancel all jobs in a job array
-If you have submitted a job array and want to cancel all jobs within that array, you can use the array job ID followed by [].
+#3. Cancel all jobs in a job array: If you have submitted a job array and want to cancel all jobs within that array, you can use the array job ID followed by [].
 
 bash
 Copy code
