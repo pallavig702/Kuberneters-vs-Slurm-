@@ -1,5 +1,5 @@
 # Kuberneters-vs-Slurm
-To cite this page you can use: Gupta. P. (2024). Kubernetes-vs-Slurm-. GitHub. [URL](https://github.com/pallavig702/Kuberneters-vs-Slurm-/tree/main)
+To cite this page you can use: Gupta. P. (2024). Kubernetes-vs-Slurm-. GitHub. https://github.com/pallavig702/Kuberneters-vs-Slurm-/tree/main
 
 A technical comparison of Kubernetes and Slurm command usage for analogous functions is provided here. Additionally, this repository offers a comparative perspective on employing both solutions for scaling high-speed data processing. Based on my research experience with both systems, this repository provides insights into factors such as ease of use, efficiency for each platform and some quick take aways for beginners.
 
