@@ -15,6 +15,17 @@ Disclaimer: While Kubernetes and Slurm have fundamentally different job submissi
 | **Submit a job to run (automating):** Submit a job script for later execution. Script will typically contain one or more srun commands to launch parallel tasks.| sbatch file.sh (file.sh contains the running instructions) | "kubectl create pod -f <YAMLfile>" or "kubectl create pod -f <YAMLfile>" (can also use apply instead of create but once created apply can help in modifications) |
 | **Submit a job to run (interactively):** Submit a job for execution or initiate job steps in real time, interactivly | srun | "kubectl create pod -f <YAMLfile>" or <br> "kubectl create pod -f <YAMLfile>" |
 | **Transering data on nodes**: Transfer a data from local disk to local disk on the nodes allocated to a job.| sbcast  | Launch the pod first to create a medium to connect to PVC. So launch the pod with PVC you want to transfer data first. Once the pod is running you can give the following command: <br> **kubectl cp /path/to/local/file my-pod:/data/** <br> This command will copy the file from your local path to the /data/ directory inside my-pod, which is the mounted PV. |
+|**Cancel a pending or running job**| "scancel ID1" (ID1 is the job id)<br>scancel -t PENDING (cancel all pending jobs) <br>or scancel -u username (cancel all jobs with a specific user name). Likewise many examples are there.| kubectl delete pod <podname> <br> kubectl delete job <jobname>|
+|**Allocate resources for a job in real time**| salloc | set resources requirements in pod or job yaml |
+|**Attach standard input, output, and error** plus signal capabilities to a currently running job or job step	| sttach | set input output in the python file mentioned in pod or job yaml | 
+
+**Some key things to remember while running kubernetes**<br>
+- Building the yaml files for pods and YAML <br>
+- Create persistent volume on node for disk usage on node locally. This is not local to your system. PVs can be build using yaml files and a fixed amount of volume is dedicated for storage of inputs and outputs and scripts on node. This can be expanded too as needed. <br>
+- Before running pods or jobs, PVs have to build local on the node. <br>
+
+
+
 
 Convert it into table here
 https://docs.google.com/spreadsheets/d/1qMnKAA5yYIJGemuwOGr8rjKKR-OGtrx08P2S95erjek/edit?gid=0#gid=0
