@@ -13,8 +13,10 @@ Disclaimer: While Kubernetes and Slurm have fundamentally different job submissi
 | Check active, failed, completed etc. | sacct -u <username> | kubectl get pods, kubectl get jobs, <br>kubectl describe pod <podname> |
 |Report the running jobs in priority order and then the pending jobs in priority order| squeue -u <username> | kubectl get pods, kubectl get jobs, <br>kubectl describe pod <podname> |
 | **Submit a job to run (automating):** Submit a job script for later execution. Script will typically contain one or more srun commands to launch parallel tasks.| sbatch file.sh (file.sh contains the running instructions) | "kubectl create pod -f <YAMLfile>" or "kubectl create pod -f <YAMLfile>" (can also use apply instead of create but once created apply can help in modifications) |
-| **Submit a job to run (interactively):** Submit a job for execution or initiate job steps in real time, interactivly | srun | "kubectl create pod -f <YAMLfile>" or "kubectl create pod -f <YAMLfile>" |
-| **Transering data on nodes**: Transfer a data from local disk to local disk on the nodes allocated to a job.| sbcast  | Launch the pod first to create a medium to connect to PVC. So launch the pod with PVC you want to transfer data first. Once the pod is running you can give the following command. "kubectl cp /path/to/local/file my-pod:/data/"  This command will copy the file from your local path to the /data/ directory inside my-pod, which is the mounted PV. To ensure the files are copied successfully to the Persistent Volume, you can log into the pod and check: kubectl exec -it my-pod -- ls /data |
+| **Submit a job to run (interactively):** Submit a job for execution or initiate job steps in real time, interactivly | srun | "kubectl create pod -f <YAMLfile>" or <br> "kubectl create pod -f <YAMLfile>" |
+| **Transering data on nodes**: Transfer a data from local disk to local disk on the nodes allocated to a job.| sbcast  | Launch the pod first to create a medium to connect to PVC. So launch the pod with PVC you want to transfer data first. Once the pod is running you can give the following command:
+**kubectl cp /path/to/local/file my-pod:/data/**
+This command will copy the file from your local path to the /data/ directory inside my-pod, which is the mounted PV. |
 
 Convert it into table here
 https://docs.google.com/spreadsheets/d/1qMnKAA5yYIJGemuwOGr8rjKKR-OGtrx08P2S95erjek/edit?gid=0#gid=0
